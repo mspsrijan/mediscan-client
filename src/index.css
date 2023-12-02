@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section {
+  @apply max-w-screen-xl mx-auto px-5 py-10 md:py-12 lg:py-16;
+}
+
+h1 {
+  @apply text-[32px] md:text-[42px] lg:text-[56px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+h2 {
+  @apply text-[28px] md:text-[36px] lg:text-[48px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+h3 {
+  @apply text-[24px] md:text-[30px] lg:text-[42px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+h4 {
+  @apply text-[22px] md:text-[24px] lg:text-[36px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+h5 {
+  @apply text-[20px] md:text-[22px] lg:text-[30px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+h6 {
+  @apply text-[18px] md:text-[20px] lg:text-[24px] uppercase font-bold !leading-tight tracking-wide;
+}
+
+span {
+  @apply text-msBlue dark:text-msLightBlue;
+}
+
+.btn {
+  @apply text-base px-6 py-[12px] rounded-full border-2 font-medium uppercase tracking-wide text-white border-msBlue bg-msBlue hover:bg-msBlue/90 hover:border-msBlue/90;
+}
+
+.btn-outline {
+  @apply text-msBlue bg-transparent hover:text-white hover:bg-msBlue dark:text-white;
+}
+
+.btn-sm {
+  @apply border px-6 py-2;
+}
