@@ -7,6 +7,10 @@ section {
   @apply max-w-screen-xl mx-auto px-5 py-10 md:py-12 lg:py-16;
 }
 
+.dashboard-section {
+  @apply lg:-mt-16 lg:py-0 lg:ml-72;
+}
+
 h1 {
   @apply text-[32px] md:text-[42px] lg:text-[56px] uppercase font-bold !leading-tight tracking-wide;
 }

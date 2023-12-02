@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Error from "../pages/Error";
-import Home from "../pages/Home";
+import Home from "../pages/home/Home";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import PrivateRoutes from "./PrivateRoutes";
@@ -15,6 +15,8 @@ import AllUsers from "../pages/dashboard/AllUsers";
 import AddATest from "../pages/dashboard/AddATest";
 import AllTests from "../pages/dashboard/AllTests";
 import Reservations from "../pages/dashboard/Reservations";
+import BookTest from "../pages/BookTest";
+import AddBanner from "../pages/dashboard/AddBanner";
 
 const routes = createBrowserRouter([
   {
@@ -34,6 +36,19 @@ const routes = createBrowserRouter([
         path: "/registration",
         element: <Registration></Registration>,
       },
+      {
+        path: "/all-tests",
+        element: <AllTests></AllTests>,
+      },
+      {
+        path: "/book-test",
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <BookTest></BookTest>
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
   {
@@ -46,43 +61,91 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoutes>
+            <Profile></Profile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/update-profile",
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <UpdateProfile>
+            <UpdateProfile></UpdateProfile>
+          </UpdateProfile>
+        ),
       },
       {
         path: "/dashboard/update-profile",
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <PrivateRoutes>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/upcoming-appointments",
-        element: <UpcomingAppointments></UpcomingAppointments>,
+        element: (
+          <PrivateRoutes>
+            <UpcomingAppointments></UpcomingAppointments>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/test-results",
-        element: <TestResults></TestResults>,
+        element: (
+          <PrivateRoutes>
+            <TestResults></TestResults>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/site-banners",
-        element: <SiteBanners></SiteBanners>,
+        element: (
+          <PrivateRoutes>
+            <SiteBanners></SiteBanners>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/add-banner",
+        element: (
+          <PrivateRoutes>
+            <AddBanner></AddBanner>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/all-users",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <PrivateRoutes>
+            <AllUsers></AllUsers>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/add-a-test",
-        element: <AddATest></AddATest>,
+        element: (
+          <PrivateRoutes>
+            <AddATest></AddATest>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/all-tests",
-        element: <AllTests></AllTests>,
+        element: (
+          <PrivateRoutes>
+            <AllTests></AllTests>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/dashboard/reservations",
-        element: <Reservations></Reservations>,
+        element: (
+          <PrivateRoutes>
+            <Reservations></Reservations>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

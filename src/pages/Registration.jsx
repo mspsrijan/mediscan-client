@@ -188,6 +188,7 @@ const Registration = () => {
                     type="file"
                     name="avatar"
                     id="avatar"
+                    required
                     accept="image/png, image/jpeg"
                     className="block w-full  text-sm cursor-pointer"
                     aria-describedby="file_input_help"
@@ -207,7 +208,6 @@ const Registration = () => {
                   <select
                     name="bloodGroup"
                     id="bloodGroup"
-                    onChange={handleDistrictChange}
                     className="block w-full py-3 px-4 bg-white border border-slate-300 rounded-full text-sm focus:border-msBlue focus:outline-none dark:bg-slate-800 dark:border-slate-700 dark:focus:border-msBlue"
                     required
                   >

@@ -32,7 +32,7 @@ const OffCanvasMenu = ({ isOpen, onClose, darkMode, toggleMode }) => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-60 md:w-72 h-full p-4 md:p-8 bg-msBlack text-white flex flex-col gap-8"
+      className="fixed top-0 left-0 w-60 md:w-72 h-full p-4 md:p-8 bg-slate-800 text-white flex flex-col gap-8"
       animate={controls}
       variants={variants}
     >
@@ -87,11 +87,13 @@ const OffCanvasMenu = ({ isOpen, onClose, darkMode, toggleMode }) => {
       <div className="flex justify-center gap-4">
         {user.photoURL ? (
           <>
-            <img
-              src={user.photoURL}
-              alt=""
-              className="w-[32px] h-[32px] rounded-full group-hover:opacity-100 transition-opacity"
-            />
+            <Link to="/dashboard">
+              <img
+                src={user.photoURL}
+                alt=""
+                className="w-[32px] h-[32px] rounded-full group-hover:opacity-100 transition-opacity"
+              />
+            </Link>
             <button
               onClick={handleSignOut}
               className="p-2.5 rounded-full bg-slate-700 hover:bg-slate-600 duration-300"

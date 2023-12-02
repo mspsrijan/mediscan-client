@@ -62,11 +62,11 @@ const Header = () => {
 
       <li>
         <Link
-          to="/all-jobs"
+          to="/all-tests"
           onClick={closeMobileNav}
           className="pb-1 border-b-2 border-transparent hover:border-msBlue dark:hover:border-slate-600"
         >
-          All Jobs
+          All Tests
         </Link>
       </li>
 

@@ -29,7 +29,7 @@ const Dashboard = () => {
   }, [darkMode]);
 
   return (
-    <div>
+    <>
       <div className="flex flex-row justify-start items-center gap-4 p-4 md:p-8">
         <button
           onClick={toggleMenu}
@@ -54,7 +54,7 @@ const Dashboard = () => {
         toggleMode={toggleMode}
       />
       <Outlet></Outlet>
-    </div>
+    </>
   );
 };
 
