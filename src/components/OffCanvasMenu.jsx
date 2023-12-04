@@ -73,7 +73,7 @@ const OffCanvasMenu = ({ isOpen, onClose, darkMode, toggleMode }) => {
           </ul>
         )}
         <ul className="flex flex-col gap-3">
-          <NavLink to="/dashboard">
+          <NavLink to="/dashboard/profile">
             <li>Profile</li>
           </NavLink>
           <NavLink to="/dashboard/upcoming-appointments">
@@ -87,7 +87,7 @@ const OffCanvasMenu = ({ isOpen, onClose, darkMode, toggleMode }) => {
       <div className="flex justify-center gap-4">
         {user.photoURL ? (
           <>
-            <Link to="/dashboard">
+            <Link to="/dashboard/profile">
               <img
                 src={user.photoURL}
                 alt=""

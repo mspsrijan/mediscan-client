@@ -43,7 +43,6 @@ const Registration = () => {
     try {
       const response = await fetch("/upazillas.json");
       const data = await response.json();
-      console.log(data);
       setUpazillas(data);
     } catch (error) {
       console.error("Error fetching upazillas data:", error);
@@ -119,6 +118,7 @@ const Registration = () => {
           district,
           upazilla,
           isActive: true,
+          role: "User",
         };
         axiosPublic.post("/users", newUser);
       })

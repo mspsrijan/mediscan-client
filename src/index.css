@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 section {
-  @apply max-w-screen-xl mx-auto px-5 py-10 md:py-12 lg:py-16;
+  @apply max-w-screen-xl mx-auto px-5 py-10;
 }
 
 .dashboard-section {
@@ -49,4 +49,32 @@ span {
 
 .btn-sm {
   @apply border px-6 py-2;
+}
+
+.btn-xs {
+  @apply border px-4 py-2;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  cursor: pointer;
+  margin: 0 2px;
+  padding: 3px 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination li:hover {
+  background-color: #edf2f7;
+}
+
+.pagination li.active {
+  background-color: #0b8fac;
+  color: #fff;
 }

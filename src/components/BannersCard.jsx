@@ -21,7 +21,7 @@ const BannersCard = ({ banner, handleDelete }) => {
         Swal.fire({
           position: "center",
           icon: "success",
-          iconColor: "#4440DA",
+          iconColor: "#0B8FAC",
           title: "Banner activated successfully!",
           showConfirmButton: false,
           timer: 1500,
@@ -41,7 +41,20 @@ const BannersCard = ({ banner, handleDelete }) => {
         showConfirmButton: false,
       });
     } else {
-      handleDelete(_id);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#0B8FAC",
+        cancelButtonColor: "#23232E",
+        confirmButtonText: "Yes, delete it!",
+        customClass: "font-montserrat",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          handleDelete(_id);
+        }
+      });
     }
   };
 

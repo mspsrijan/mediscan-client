@@ -59,7 +59,6 @@ const Header = () => {
           Home
         </Link>
       </li>
-
       <li>
         <Link
           to="/all-tests"
@@ -69,14 +68,32 @@ const Header = () => {
           All Tests
         </Link>
       </li>
-
       <li>
         <Link
-          to="/blogs"
+          to="/about"
           onClick={closeMobileNav}
           className="pb-1 border-b-2 border-transparent hover:border-msBlue dark:hover:border-slate-600"
         >
-          Blogs
+          About
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          to="/contact"
+          onClick={closeMobileNav}
+          className="pb-1 border-b-2 border-transparent hover:border-msBlue dark:hover:border-slate-600"
+        >
+          Contact
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/testimonials"
+          onClick={closeMobileNav}
+          className="pb-1 border-b-2 border-transparent hover:border-msBlue dark:hover:border-slate-600"
+        >
+          Testimonials
         </Link>
       </li>
     </>

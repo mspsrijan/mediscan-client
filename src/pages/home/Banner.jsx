@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Dna } from "react-loader-spinner";
 
 const Banner = () => {
   const [activeBanner, setActiveBanner] = useState([]);
   const [loading, setLoading] = useState(true);
-  const AxiosSecure = useAxiosSecure();
+  const AxiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    AxiosSecure.get("/active-banner").then((res) => {
+    AxiosPublic.get("/active-banner").then((res) => {
       setActiveBanner(res.data[0]);
       setLoading(false);
     });
-  }, [AxiosSecure]);
-
-  console.log(activeBanner);
+  }, [AxiosPublic]);
 
   return loading ? (
     <Dna
@@ -23,14 +21,13 @@ const Banner = () => {
       height="80"
       width="80"
       ariaLabel="dna-loading"
-      wrapperStyle={{}}
       wrapperClass="dna-wrapper mx-auto min-h-[400px] md:min-h-[500px] flex items-center justify-center"
     />
   ) : (
-    <section className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
+    <section className="pt-8 flex flex-col md:flex-row items-center justify-center gap-8">
       <div className="w-full md:w-1/2">
         <h1>{activeBanner.title}</h1>
-        <p className="text-lg md:text-xl font-medium">
+        <p className="mt-2 text-lg md:text-xl font-medium">
           {activeBanner.description}
         </p>
         <p className="mt-8 font-medium uppercase leading-6 tracking-tight">
@@ -38,13 +35,15 @@ const Banner = () => {
           <span className="font-bold underline">
             {activeBanner.couponDiscount}% Discount
           </span>
-          &nbsp; on Your First Diagnostic Session! Use Code
+          &nbsp; on Your First Diagnostic Session!
+          <br />
+          Use Code
           <span className="font-bold"> {activeBanner.couponCode} </span> at
           Checkout.
         </p>
 
         <Link to="/all-tests">
-          <button className="mt-4 btn ">All Tests</button>
+          <button className="mt-8 btn ">All Tests</button>
         </Link>
       </div>
       <div className="w-full md:w-1/2">

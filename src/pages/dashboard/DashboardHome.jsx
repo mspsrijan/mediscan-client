@@ -3,7 +3,7 @@ import { Dna } from "react-loader-spinner";
 import { Helmet } from "react-helmet";
 import { AuthContext } from "../../providers/AuthProvider";
 
-const Profile = () => {
+const DashboardHome = () => {
   const [loading, setLoading] = useState(true);
   const { user } = useContext(AuthContext);
 
@@ -27,11 +27,11 @@ const Profile = () => {
   ) : (
     <section className="dashboard-section">
       <Helmet>
-        <title>MediScan | Profile</title>
+        <title>MediScan | Dashboard</title>
       </Helmet>
       <div className="mx-auto">
         <div className="text-center">
-          <h4>Profile</h4>
+          <h4>MediScan Dashboard</h4>
         </div>
 
         <div className="mt-12 flex flex-col justify-center items-center gap-4">
@@ -49,4 +49,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default DashboardHome;

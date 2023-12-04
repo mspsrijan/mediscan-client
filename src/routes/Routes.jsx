@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Registration from "../pages/Registration";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../pages/dashboard/Dashboard";
+import DashboardHome from "../pages/dashboard/DashboardHome";
 import Profile from "../pages/dashboard/Profile";
 import UpdateProfile from "../pages/dashboard/UpdateProfile";
 import UpcomingAppointments from "../pages/dashboard/UpcomingAppointments";
@@ -13,10 +14,14 @@ import TestResults from "../pages/dashboard/TestResults";
 import SiteBanners from "../pages/dashboard/SiteBanners";
 import AllUsers from "../pages/dashboard/AllUsers";
 import AddATest from "../pages/dashboard/AddATest";
+import Tests from "../pages/Tests";
 import AllTests from "../pages/dashboard/AllTests";
 import Reservations from "../pages/dashboard/Reservations";
-import BookTest from "../pages/BookTest";
 import AddBanner from "../pages/dashboard/AddBanner";
+import SingleTest from "../pages/SingleTest";
+import Contact from "../pages/Contact";
+import About from "../pages/About";
+import Testimonials from "../pages/Testimonials";
 
 const routes = createBrowserRouter([
   {
@@ -37,15 +42,27 @@ const routes = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: "/all-tests",
-        element: <AllTests></AllTests>,
+        path: "/about",
+        element: <About></About>,
       },
       {
-        path: "/book-test",
+        path: "/testimonials",
+        element: <Testimonials></Testimonials>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/all-tests",
+        element: <Tests></Tests>,
+      },
+
+      {
+        path: "/test/:id",
         element: (
           <PrivateRoutes>
-            {" "}
-            <BookTest></BookTest>
+            <SingleTest></SingleTest>
           </PrivateRoutes>
         ),
       },
@@ -60,7 +77,15 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/",
+        element: (
+          <PrivateRoutes>
+            <DashboardHome></DashboardHome>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/dashboard/profile",
         element: (
           <PrivateRoutes>
             <Profile></Profile>

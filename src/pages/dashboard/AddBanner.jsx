@@ -46,12 +46,12 @@ const AddBanner = () => {
         Swal.fire({
           position: "center",
           icon: "success",
-          iconColor: "#4440DA",
+          iconColor: "#0B8FAC",
           title: "Banner added successfully!",
           showCancelButton: true,
-          confirmButtonColor: "#4440DA",
+          confirmButtonColor: "#0B8FAC",
           cancelButtonColor: "#23232E",
-          confirmButtonText: "Add Another",
+          confirmButtonText: "Add Another?",
           customClass: "font-montserrat",
         }).then((result) => {
           if (result.isConfirmed) {

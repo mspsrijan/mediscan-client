@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Dna } from "react-loader-spinner";
 import BannersCard from "../../components/BannersCard";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const SiteBanners = () => {
   const AxiosSecure = useAxiosSecure();
@@ -29,7 +30,8 @@ const SiteBanners = () => {
           title: `Banner has been deleted`,
           showConfirmButton: false,
           timer: 1500,
-          iconColor: "#4440DA",
+          iconColor: "#0B8FAC",
+          customClass: "font-montserrat",
         });
       }
     });
@@ -48,6 +50,9 @@ const SiteBanners = () => {
     </div>
   ) : (
     <section className="dashboard-section">
+      <Helmet>
+        <title>MediScan | Site Banners</title>
+      </Helmet>
       <div className="mx-auto">
         <div className="text-center">
           <h4>Site Banners</h4>
